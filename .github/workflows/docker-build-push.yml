@@ -99,6 +99,8 @@ jobs:
 
       - name: Determine Docker tags for all images
         id: determine-tags
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           node .github/scripts/docker/docker-tags.mjs \
             --all \
